@@ -54,7 +54,7 @@ where:
 - `resolution` specifies the marching cubes grid resolution. This should be rather high (i.e. 256), in order to stay within the bounds of the MPU surface definition.
 - `output_surface` is the resulting isosurface, either off or obj format.
 
-Included in modeling/models is an example implicit surface, bumps, used in the "simple shapes" part
+Included in `modeling/models` is an example implicit surface, bumps, used in the "simple shapes" part
 of the benchmark.
 
 
@@ -85,9 +85,9 @@ To generate the point cloud, from within the reconbench directory:
 ```
 python scripts/RunSampler.py config_file
 ```
-where `config_file` is the aforementioned configuration file generated through pc_generator. The result is a .npts file, as well as a .mov file, which is a movie of all scans and laser stripes taken through the scanning simulation.
+where `config_file` is the aforementioned configuration file generated through pc_generator. The result is a `.npts` file, as well as a `.mov` file, which is a movie of all scans and laser stripes taken through the scanning simulation.
 
-We have provided some example config files for the bumps shape, varying in increasing resolution, found in data/pcs/bumps. Give the above a try to produce the point clouds for these config files.
+We have provided some example config files for the bumps shape, varying in increasing resolution, found in `data/pcs/bumps`. Give the above a try to produce the point clouds for these config files.
 
 
 ## Reconstruction
