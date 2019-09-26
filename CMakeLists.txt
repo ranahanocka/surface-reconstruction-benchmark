@@ -117,7 +117,7 @@ add_executable(single_distribution ${evaluator_SOURCES} ${evaluator_HEADERS} eva
 target_include_directories(single_distribution PUBLIC ${evaluator_INCLUDE})
 target_link_libraries(single_distribution PUBLIC Modeling Sampler)
 
-
+set(CMAKE_CXX_STANDARD 11)
 add_executable(sample_implicit ${evaluator_SOURCES} ${evaluator_HEADERS} sample_implicit.cpp)
 target_include_directories(sample_implicit PUBLIC ${evaluator_INCLUDE})
 target_link_libraries(sample_implicit PUBLIC Modeling Sampler)
