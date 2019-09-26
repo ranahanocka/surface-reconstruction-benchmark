@@ -16,7 +16,7 @@ The benchmark requires that the following dependencies be installed on the syste
 ### Installing Dependencies on Ubuntu
 To install the dependencies on Ubuntu, type
 ```
-sudo apt-get install libpng12-dev liblapack-dev libblas-dev ffmpeg gnuplot texlive-font-utils cmake
+sudo apt-get install libpng12-dev liblapack-dev libblas-dev ffmpeg gnuplot texlive-font-utils cmake libopenexr-dev libsuitesparse-dev
 ```
 
 ### Building the project on Mac and Linux
