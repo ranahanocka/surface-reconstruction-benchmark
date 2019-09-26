@@ -25,6 +25,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 #include "PNGImage.h"
+#include <stdlib.h>
 
 PNGImage::PNGImage(string _filename, int _resx, int _resy)  {
 	filename = _filename;
