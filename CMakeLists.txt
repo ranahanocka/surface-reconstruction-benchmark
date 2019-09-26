@@ -7,7 +7,7 @@ add_subdirectory(OpenMesh)
 add_subdirectory(pbrt)
 add_subdirectory(registration)
 
-find_package(Lapack)
+find_package(LAPACK)
 find_package(PNG)
 
 if(NOT ${LAPACK_FOUND})
