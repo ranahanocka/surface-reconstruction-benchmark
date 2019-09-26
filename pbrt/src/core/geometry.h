@@ -30,6 +30,7 @@
 
 // core/geometry.h*
 #include "pbrt.h"
+#include <cmath>
 
 // Geometry Declarations
 class Vector {
@@ -40,7 +41,7 @@ public:
         : x(xx), y(yy), z(zz) {
         Assert(!HasNaNs());
     }
-    bool HasNaNs() const { return isnan(x) || isnan(y) || isnan(z); }
+    bool HasNaNs() const { return std::isnan(x) || std::isnan(y) || std::isnan(z); }
     explicit Vector(const Point &p);
 #ifndef NDEBUG
     // The default versions of these are fine for release builds; for debug
@@ -79,7 +80,7 @@ public:
     Vector operator*(float f) const { return Vector(f*x, f*y, f*z); }
     
     Vector &operator*=(float f) {
-        Assert(!isnan(f));
+        Assert(!std::isnan(f));
         x *= f; y *= f; z *= f;
         return *this;
     }
@@ -201,7 +202,7 @@ public:
         return (&x)[i];
     }
     bool HasNaNs() const {
-        return isnan(x) || isnan(y) || isnan(z);
+        return std::isnan(x) || std::isnan(y) || std::isnan(z);
     }
 
     bool operator==(const Point &p) const {
@@ -248,7 +249,7 @@ public:
         return *this;
     }
     bool HasNaNs() const {
-        return isnan(x) || isnan(y) || isnan(z);
+        return std::isnan(x) || std::isnan(y) || std::isnan(z);
     }
     Normal operator*(float f) const {
         return Normal(f*x, f*y, f*z);
@@ -325,7 +326,7 @@ public:
     Point operator()(float t) const { return o + d * t; }
     bool HasNaNs() const {
         return (o.HasNaNs() || d.HasNaNs() ||
-                isnan(mint) || isnan(maxt));
+                std::isnan(mint) || std::isnan(maxt));
     }
 
     // Ray Public Data

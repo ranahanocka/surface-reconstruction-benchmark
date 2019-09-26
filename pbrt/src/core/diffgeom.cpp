@@ -27,6 +27,7 @@
 #include "diffgeom.h"
 #include "transform.h"
 #include "shape.h"
+#include <cmath>
 
 // DifferentialGeometry Method Definitions
 DifferentialGeometry::DifferentialGeometry(const Point &P,
@@ -56,11 +57,11 @@ void DifferentialGeometry::ComputeDifferentials(
         float d = -Dot(nn, Vector(p.x, p.y, p.z));
         Vector rxv(ray.rxOrigin.x, ray.rxOrigin.y, ray.rxOrigin.z);
         float tx = -(Dot(nn, rxv) + d) / Dot(nn, ray.rxDirection);
-        if (isnan(tx)) goto fail;
+        if (std::isnan(tx)) goto fail;
         Point px = ray.rxOrigin + tx * ray.rxDirection;
         Vector ryv(ray.ryOrigin.x, ray.ryOrigin.y, ray.ryOrigin.z);
         float ty = -(Dot(nn, ryv) + d) / Dot(nn, ray.ryDirection);
-        if (isnan(ty)) goto fail;
+        if (std::isnan(ty)) goto fail;
         Point py = ray.ryOrigin + ty * ray.ryDirection;
         dpdx = px - p;
         dpdy = py - p;
